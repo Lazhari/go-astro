@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build" # Command to build the project
+  publish = "dist"          # Folder to publish the built site (Astro outputs to "dist" by default)
+
+[build.environment]
+  # Set the Node.js version for Netlify's build environment (optional)
+  NODE_VERSION = "18"
+  PUBLIC_API_URL = "https://astro-gofiber-production.up.railway.app"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
