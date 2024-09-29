@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro"
+import {Button} from '@/components/ui/button'
+
+const response = await fetch("http://localhost:9090/hello/Astro")
+const data = await response.json()
+---
+
+<Layout title="Welcome to Astro.">
+	<body>
+		<div
+			class="border text-white rounded-lg max-w-7xl m-auto mt-8 p-12 flex flex-col justify-center items-center gap-3"
+		>
+			<h1 class="text-4xl">Astro + Go API</h1>
+			<p>
+				Message From Go API: {data.message}
+			</p>
+
+			<Button>Hello Shadcn UI</Button>
+		</div>
+	</body>
+</Layout>
